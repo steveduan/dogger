@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .class01{
+           background-color: lightblue;
+           border:20px dotted black;
+           background-clip: content-box;
+           padding: 30px;
+           margin: 10px;
+           width: 300px;
+           height: 300px;
+           background-image: radial-gradient(circle,yellow,red);/*linear-gradient(45deg,yellow,red);*/
+           animation: mymove 2s;
+           animation-iteration-count: infinite;
+           animation-timing-function: ease-in-out;
+           animation-direction: alternate;
+           position: relative;
+            transition: width 2s,height 2s,font-size 3s,border 2s,transform 4s;
+
+        }
+        .class01:hover{
+            width: 350px;
+            height: 350px;
+            font-size: 50px;
+            color:yellow;
+            transform: rotate(180deg);
+            border: 10px solid blue;
+        }
+        @keyframes mymove
+            {
+                from{
+                    left:0px;
+            }
+            to{
+                left: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="mymove" class="class01">
+        <p >some test!</p>
+    </div>
+    <button name="puase" type="button" onclick="myfunc()">puase</button>
+    <button name="run" type="button" onclick="myfunc1()">run</button>
+    <script type="text/javascript">
+        function myfunc(){
+            
+            document.getElementById("mymove").style.animationPlayState="paused";
+        }
+        function myfunc1(){
+            document.getElementById("mymove").style.animationPlayState="running";
+        }
+    </script>
+</body>
+</html>
